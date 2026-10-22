@@ -73,7 +73,7 @@ public class Draghetto {
 
         // Metodo mostraStato
         public void mostraStato() {
-            System.out.println("----- STATO DRAGHETTO -----");
+            System.out.println(" STATO DRAGHETTO ");
             System.out.println("Nome: " + nome);
             System.out.println("Energia: " + energia);
             System.out.println("Fame: " + fame);
