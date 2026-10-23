@@ -9,8 +9,8 @@ public class Drago implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < count; i++) {
-            System.out.println(this.getName() + " sto volando " + (i + 1));
+        for (int i = 0; i < numBattiti && !Thread.interrupted(); i++) {
+            System.out.println(nome+"si libra nell aria! gioia immensa;");
         }
 
         try {
