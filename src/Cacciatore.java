@@ -6,9 +6,18 @@ public class Cacciatore {
         this.nome = nome;
     }
 
-    public void colpisciDrago(Thread drago) {
-        System.out.println("Il cacciatore " + nome + " lancia il dardo!");
-        drago.interrupt();
-    }
+    public void lanciaDardi(Thread drago) {
+        for (int i = 0; i <= 20 && (!drago.isInterrupted()); i++) {
+            try {
+                Thread.sleep(100);
+                drago.interrupt();
+                System.out.println(nome+" sta cercando di colpire il drago");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
+            System.out.println("Il cacciatore " + nome + " lancia il dardo!");
+            drago.interrupt();
+        }
+    }
 }

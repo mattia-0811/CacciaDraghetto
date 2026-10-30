@@ -7,30 +7,25 @@ public class Main {
         Scanner inTastiera = new Scanner(System.in);
 
         System.out.println("INSERISCI IL NUMERO DI BATTITI DI ALI: ");
-        int battiti = inTastiera.nextInt();
+        int count = inTastiera.nextInt();
 
         Cacciatore sangiorgio = new Cacciatore("Giorgio");
 
-        Thread drago1 = new Thread(new Drago(battiti, "Argo"));
+        Thread argo = new Thread(new Drago(count, "Argo"));
 
-        drago1.start();
+        argo.start();
+        sangiorgio.lanciaDardi(argo);
 
         for (int i = 0; i < 10; i++) {
 
-            System.out.println("Main sta osservando il drago... i = " + (i + 1));
+            System.out.println("Main sta osservando il drago... i = " + i + 1);
 
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
-                System.out.println("Sleep error nel main: " + e);
-                Thread.currentThread().interrupt();
-                break;
+                //ystem.out.println(e);
+                throw new RuntimeException(e);
             }
         }
-
-        sangiorgio.colpisciDrago(drago1);
-
-        inTastiera.close();
     }
-
 }
