@@ -9,7 +9,7 @@ public class Cacciatore {
     public void lanciaDardi(Thread drago) {
         for (int i = 0; i <= 20 && (!drago.isInterrupted()); i++) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(500);
                 drago.interrupt();
                 System.out.println(nome+" sta cercando di colpire il drago");
             } catch (InterruptedException e) {
